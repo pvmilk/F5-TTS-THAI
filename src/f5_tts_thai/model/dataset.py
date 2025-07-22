@@ -10,8 +10,8 @@ from torch import nn
 from torch.utils.data import Dataset, Sampler
 from tqdm import tqdm
 
-from f5_tts.model.modules import MelSpec
-from f5_tts.model.utils import default
+from f5_tts_thai.model.modules import MelSpec
+from f5_tts_thai.model.utils import default
 
 
 class HFDataset(Dataset):
@@ -253,7 +253,7 @@ def load_dataset(
     print("Loading dataset ...")
 
     if dataset_type == "CustomDataset":
-        rel_data_path = str(files("f5_tts").joinpath(f"../../data/{dataset_name}_{tokenizer}"))
+        rel_data_path = str(files("f5_tts_thai").joinpath(f"../../data/{dataset_name}_{tokenizer}"))
         if audio_type == "raw":
             try:
                 train_dataset = load_from_disk(f"{rel_data_path}/raw")
@@ -294,7 +294,7 @@ def load_dataset(
         )
         pre, post = dataset_name.split("_")
         train_dataset = HFDataset(
-            load_dataset(f"{pre}/{pre}", split=f"train.{post}", cache_dir=str(files("f5_tts").joinpath("../../data"))),
+            load_dataset(f"{pre}/{pre}", split=f"train.{post}", cache_dir=str(files("f5_tts_thai").joinpath("../../data"))),
         )
 
     return train_dataset

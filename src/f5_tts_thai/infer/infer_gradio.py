@@ -30,8 +30,8 @@ def gpu_decorator(func):
         return func
 
 
-from f5_tts.model import DiT, UNetT
-from f5_tts.infer.utils_infer import (
+from f5_tts_thai.model import DiT, UNetT
+from f5_tts_thai.infer.utils_infer import (
     load_vocoder,
     load_model,
     preprocess_ref_audio_text,
@@ -534,7 +534,7 @@ If you're having issues, try converting your reference audio to WAV or MP3, clip
 """
     )
 
-    last_used_custom = files("f5_tts").joinpath("infer/.cache/last_used_custom_model_info.txt")
+    last_used_custom = files("f5_tts_thai").joinpath("infer/.cache/last_used_custom_model_info.txt")
 
     def load_last_used_custom():
         try:
