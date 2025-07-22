@@ -6,7 +6,7 @@ import soundfile as sf
 import tqdm
 from cached_path import cached_path
 
-from f5_tts.infer.utils_infer import (
+from f5_tts_thai.infer.utils_infer import (
     hop_length,
     infer_process,
     load_model,
@@ -17,8 +17,8 @@ from f5_tts.infer.utils_infer import (
     transcribe,
     target_sample_rate,
 )
-from f5_tts.model import DiT, UNetT
-from f5_tts.model.utils import seed_everything
+from f5_tts_thai.model import DiT, UNetT
+from f5_tts_thai.model.utils import seed_everything
 
 
 class F5TTS:
@@ -163,11 +163,11 @@ if __name__ == "__main__":
     f5tts = F5TTS()
 
     wav, sr, spect = f5tts.infer(
-        ref_file=str(files("f5_tts").joinpath("infer/examples/basic/basic_ref_en.wav")),
+        ref_file=str(files("f5_tts_thai").joinpath("infer/examples/basic/basic_ref_en.wav")),
         ref_text="some call me nature, others call me mother nature.",
         gen_text="""I don't really care what you call me. I've been a silent spectator, watching species evolve, empires rise and fall. But always remember, I am mighty and enduring. Respect me and I'll nurture you; ignore me and you shall face the consequences.""",
-        file_wave=str(files("f5_tts").joinpath("../../tests/api_out.wav")),
-        file_spect=str(files("f5_tts").joinpath("../../tests/api_out.png")),
+        file_wave=str(files("f5_tts_thai").joinpath("../../tests/api_out.wav")),
+        file_spect=str(files("f5_tts_thai").joinpath("../../tests/api_out.png")),
         seed=-1,  # random seed = -1
     )
 

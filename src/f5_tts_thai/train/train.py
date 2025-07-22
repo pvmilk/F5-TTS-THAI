@@ -5,14 +5,14 @@ from importlib.resources import files
 
 import hydra
 
-from f5_tts.model import CFM, DiT, Trainer, UNetT
-from f5_tts.model.dataset import load_dataset
-from f5_tts.model.utils import get_tokenizer
+from f5_tts_thai.model import CFM, DiT, Trainer, UNetT
+from f5_tts_thai.model.dataset import load_dataset
+from f5_tts_thai.model.utils import get_tokenizer
 
-os.chdir(str(files("f5_tts").joinpath("../..")))  # change working directory to root of project (local editable)
+os.chdir(str(files("f5_tts_thai").joinpath("../..")))  # change working directory to root of project (local editable)
 
 
-@hydra.main(version_base="1.3", config_path=str(files("f5_tts").joinpath("configs")), config_name=None)
+@hydra.main(version_base="1.3", config_path=str(files("f5_tts_thai").joinpath("configs")), config_name=None)
 def main(cfg):
     tokenizer = cfg.model.tokenizer
     mel_spec_type = cfg.model.mel_spec.mel_spec_type
@@ -46,7 +46,7 @@ def main(cfg):
         num_warmup_updates=cfg.optim.num_warmup_updates,
         save_per_updates=cfg.ckpts.save_per_updates,
         keep_last_n_checkpoints=getattr(cfg.ckpts, "keep_last_n_checkpoints", -1),
-        checkpoint_path=str(files("f5_tts").joinpath(f"../../{cfg.ckpts.save_dir}")),
+        checkpoint_path=str(files("f5_tts_thai").joinpath(f"../../{cfg.ckpts.save_dir}")),
         batch_size=cfg.datasets.batch_size_per_gpu,
         batch_size_type=cfg.datasets.batch_size_type,
         max_samples=cfg.datasets.max_samples,

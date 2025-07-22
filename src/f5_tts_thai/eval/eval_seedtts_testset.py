@@ -11,13 +11,13 @@ import multiprocessing as mp
 from importlib.resources import files
 
 import numpy as np
-from f5_tts.eval.utils_eval import (
+from f5_tts_thai.eval.utils_eval import (
     get_seed_tts_test,
     run_asr_wer,
     run_sim,
 )
 
-rel_path = str(files("f5_tts").joinpath("../../"))
+rel_path = str(files("f5_tts_thai").joinpath("../../"))
 
 
 def get_args():

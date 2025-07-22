@@ -12,7 +12,7 @@ import tomli
 from cached_path import cached_path
 from omegaconf import OmegaConf
 
-from f5_tts.infer.utils_infer import (
+from f5_tts_thai.infer.utils_infer import (
     mel_spec_type,
     target_rms,
     cross_fade_duration,
@@ -27,7 +27,7 @@ from f5_tts.infer.utils_infer import (
     preprocess_ref_audio_text,
     remove_silence_for_generated_wav,
 )
-from f5_tts.model import DiT, UNetT
+from f5_tts_thai.model import DiT, UNetT
 
 
 parser = argparse.ArgumentParser(
@@ -39,7 +39,7 @@ parser.add_argument(
     "-c",
     "--config",
     type=str,
-    default=os.path.join(files("f5_tts").joinpath("infer/examples/basic"), "basic.toml"),
+    default=os.path.join(files("f5_tts_thai").joinpath("infer/examples/basic"), "basic.toml"),
     help="The configuration file, default see infer/examples/basic/basic.toml",
 )
 
@@ -173,7 +173,7 @@ config = tomli.load(open(args.config, "rb"))
 # command-line interface parameters
 
 model = args.model or config.get("model", "F5-TTS")
-model_cfg = args.model_cfg or config.get("model_cfg", str(files("f5_tts").joinpath("configs/F5TTS_Base_train.yaml")))
+model_cfg = args.model_cfg or config.get("model_cfg", str(files("f5_tts_thai").joinpath("configs/F5TTS_Base_train.yaml")))
 ckpt_file = args.ckpt_file or config.get("ckpt_file", "")
 vocab_file = args.vocab_file or config.get("vocab_file", "")
 
@@ -207,14 +207,14 @@ fix_duration = args.fix_duration or config.get("fix_duration", fix_duration)
 
 # patches for pip pkg user
 if "infer/examples/" in ref_audio:
-    ref_audio = str(files("f5_tts").joinpath(f"{ref_audio}"))
+    ref_audio = str(files("f5_tts_thai").joinpath(f"{ref_audio}"))
 if "infer/examples/" in gen_file:
-    gen_file = str(files("f5_tts").joinpath(f"{gen_file}"))
+    gen_file = str(files("f5_tts_thai").joinpath(f"{gen_file}"))
 if "voices" in config:
     for voice in config["voices"]:
         voice_ref_audio = config["voices"][voice]["ref_audio"]
         if "infer/examples/" in voice_ref_audio:
-            config["voices"][voice]["ref_audio"] = str(files("f5_tts").joinpath(f"{voice_ref_audio}"))
+            config["voices"][voice]["ref_audio"] = str(files("f5_tts_thai").joinpath(f"{voice_ref_audio}"))
 
 
 # ignore gen_text if gen_file provided

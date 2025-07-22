@@ -9,7 +9,7 @@ from cached_path import cached_path
 import argparse
 import os
 
-from f5_tts.infer.utils_infer import (
+from f5_tts_thai.infer.utils_infer import (
     hop_length,
     infer_process,
     load_model,
@@ -20,13 +20,13 @@ from f5_tts.infer.utils_infer import (
     transcribe,
     target_sample_rate,
 )
-from f5_tts.model import DiT, UNetT
-from f5_tts.model.utils import seed_everything
+from f5_tts_thai.model import DiT, UNetT
+from f5_tts_thai.model.utils import seed_everything
 import torch
-from f5_tts.cleantext.number_tha import replace_numbers_with_thai
-from f5_tts.cleantext.th_repeat import process_thai_repeat
-from f5_tts.utils.whisper_api import translate_inference,transribe_inference
-from f5_tts.infer.infer_gradio import *
+from f5_tts_thai.cleantext.number_tha import replace_numbers_with_thai
+from f5_tts_thai.cleantext.th_repeat import process_thai_repeat
+from f5_tts_thai.utils.whisper_api import translate_inference,transribe_inference
+from f5_tts_thai.infer.infer_gradio import *
 
 #ถ้าอยากใช้โมเดลที่อัพเดทใหม หรือโมเดลภาษาอื่น สามารถแก้ไขโค้ด Model และ Vocab เช่น default_model_base = "hf://VIZINTZOR/F5-TTS-THAI/model_350000.pt"
 default_model_base = "hf://VIZINTZOR/F5-TTS-THAI/model_1000000.pt"
@@ -180,22 +180,22 @@ def create_gradio_interface():
             gr.Examples(
                 examples=[
                     [
-                        "./src/f5_tts/infer/examples/thai_examples/ref_gen_1.wav",
+                        "./src/f5_tts_thai/infer/examples/thai_examples/ref_gen_1.wav",
                         "ได้รับข่าวคราวของเราที่จะหาที่มันเป็นไปที่จะจัดขึ้น.",
                         "พรุ่งนี้มีประชุมสำคัญ อย่าลืมเตรียมเอกสารให้เรียบร้อย"
                     ],
                     [
-                        "./src/f5_tts/infer/examples/thai_examples/ref_gen_2.wav",
+                        "./src/f5_tts_thai/infer/examples/thai_examples/ref_gen_2.wav",
                         "ฉันเดินทางไปเที่ยวที่จังหวัดเชียงใหม่ในช่วงฤดูหนาวเพื่อสัมผัสอากาศเย็นสบาย.",
                         "ฉันชอบฟังเพลงขณะขับรถ เพราะช่วยให้รู้สึกผ่อนคลาย"
                     ],
                     [
-                        "./src/f5_tts/infer/examples/thai_examples/ref_gen_3.wav",
+                        "./src/f5_tts_thai/infer/examples/thai_examples/ref_gen_3.wav",
                         "กู้ดอาฟเต้อนูนไนท์ทูมีทยู.",
                         "วันนี้อากาศดีมาก เหมาะกับการไปเดินเล่นที่สวนสาธารณะ"
                     ],
                     [
-                        "./src/f5_tts/infer/examples/thai_examples/ref_gen_4.wav",
+                        "./src/f5_tts_thai/infer/examples/thai_examples/ref_gen_4.wav",
                         "เราอยากจะตื่นขึ้นมามั้ยคะ.",
                         "เมื่อวานฉันไปเดินเล่นที่ชายหาด เสียงคลื่นซัดฝั่งเป็นจังหวะที่ชวนให้ใจสงบ."
                     ]

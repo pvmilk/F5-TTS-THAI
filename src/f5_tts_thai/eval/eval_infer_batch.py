@@ -12,14 +12,14 @@ import torchaudio
 from accelerate import Accelerator
 from tqdm import tqdm
 
-from f5_tts.eval.utils_eval import (
+from f5_tts_thai.eval.utils_eval import (
     get_inference_prompt,
     get_librispeech_test_clean_metainfo,
     get_seedtts_testset_metainfo,
 )
-from f5_tts.infer.utils_infer import load_checkpoint, load_vocoder
-from f5_tts.model import CFM, DiT, UNetT
-from f5_tts.model.utils import get_tokenizer
+from f5_tts_thai.infer.utils_infer import load_checkpoint, load_vocoder
+from f5_tts_thai.model import CFM, DiT, UNetT
+from f5_tts_thai.model.utils import get_tokenizer
 
 accelerator = Accelerator()
 device = f"cuda:{accelerator.process_index}"
@@ -34,7 +34,7 @@ win_length = 1024
 n_fft = 1024
 target_rms = 0.1
 
-rel_path = str(files("f5_tts").joinpath("../../"))
+rel_path = str(files("f5_tts_thai").joinpath("../../"))
 
 
 def main():

@@ -3,9 +3,9 @@ requires = ["setuptools >= 61.0", "setuptools-scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "f5-tts"
+name = "f5-tts-thai"
 version = "1.1.1"
-description = "F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching"
+description = "F5-TTS-THAI: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching (Support For Thai language)."
 readme = "README.md"
 license = {text = "MIT License"}
 classifiers = [
@@ -60,11 +60,11 @@ eval = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/SWivid/F5-TTS"
+Homepage = "https://github.com/VYNCX/F5-TTS-THAI"
 
 [project.scripts]
-"f5-tts_infer-cli" = "f5_tts.infer.infer_cli:main"
-"f5-tts_infer-gradio" = "f5_tts.infer.infer_gradio:main"
-"f5-tts_finetune-cli" = "f5_tts.train.finetune_cli:main"
-"f5-tts_finetune-gradio" = "f5_tts.train.finetune_gradio:main"
-"f5-tts_webui" = "f5_tts.f5_tts_webui:main"
+"f5-tts-thai_infer-cli" = "f5_tts_thai.infer.infer_cli:main"
+"f5-tts-thai_infer-gradio" = "f5_tts_thai.infer.infer_gradio:main"
+"f5-tts-thai_finetune-cli" = "f5_tts_thai.train.finetune_cli:main"
+"f5-tts-thai_finetune-gradio" = "f5_tts_thai.train.finetune_gradio:main"
+"f5-tts-thai_webui" = "f5_tts_thai.f5_tts_webui:main"

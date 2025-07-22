@@ -3,9 +3,9 @@ import os
 import shutil
 
 from cached_path import cached_path
-from f5_tts.model import CFM, UNetT, DiT, Trainer
-from f5_tts.model.utils import get_tokenizer
-from f5_tts.model.dataset import load_dataset
+from f5_tts_thai.model import CFM, UNetT, DiT, Trainer
+from f5_tts_thai.model.utils import get_tokenizer
+from f5_tts_thai.model.dataset import load_dataset
 from importlib.resources import files
 
 
@@ -85,7 +85,7 @@ def parse_args():
 def main():
     args = parse_args()
 
-    checkpoint_path = str(files("f5_tts").joinpath(f"../../ckpts/{args.dataset_name}"))
+    checkpoint_path = str(files("f5_tts_thai").joinpath(f"../../ckpts/{args.dataset_name}"))
 
     # Model parameters based on experiment name
     if args.exp_name == "F5TTS_Base":

@@ -19,12 +19,12 @@ import torchaudio
 from tqdm import tqdm
 from datasets.arrow_writer import ArrowWriter
 
-from f5_tts.model.utils import (
+from f5_tts_thai.model.utils import (
     convert_char_to_pinyin,
 )
 
 
-PRETRAINED_VOCAB_PATH = files("f5_tts").joinpath("../../data/Emilia_ZH_EN_pinyin/vocab.txt")
+PRETRAINED_VOCAB_PATH = files("f5_tts_thai").joinpath("../../data/Emilia_ZH_EN_pinyin/vocab.txt")
 
 
 def is_csv_wavs_format(input_dataset_dir):

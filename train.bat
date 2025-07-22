@@ -7,7 +7,7 @@ REM Change to the location of Python executable
 call venv/scripts/activate
 
 REM Run the Python script using the activated Python environment
-f5-tts_finetune-gradio
+f5-tts-thai_finetune-gradio
 
 REM Return to the original directory
 cd /d %current_dir%

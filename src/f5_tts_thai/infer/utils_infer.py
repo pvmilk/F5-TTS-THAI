@@ -28,8 +28,8 @@ from vocos import Vocos
 import syllapy 
 from ssg import syllable_tokenize
 
-from f5_tts.model import CFM
-from f5_tts.model.utils import (
+from f5_tts_thai.model import CFM
+from f5_tts_thai.model.utils import (
     get_tokenizer,
     convert_char_to_pinyin,
 )
@@ -250,7 +250,7 @@ def load_model(
     device=device,
 ):
     if vocab_file == "":
-        vocab_file = str(files("f5_tts").joinpath("infer/examples/vocab.txt"))
+        vocab_file = str(files("f5_tts_thai").joinpath("infer/examples/vocab.txt"))
     tokenizer = "custom"
 
     print("\nvocab : ", vocab_file)

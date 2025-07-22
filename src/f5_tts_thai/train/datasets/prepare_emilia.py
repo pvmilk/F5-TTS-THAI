@@ -17,7 +17,7 @@ from tqdm import tqdm
 
 from datasets.arrow_writer import ArrowWriter
 
-from f5_tts.model.utils import (
+from f5_tts_thai.model.utils import (
     repetition_found,
     convert_char_to_pinyin,
 )
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     langs = ["ZH", "EN"]
     dataset_dir = "<SOME_PATH>/Emilia_Dataset/raw"
     dataset_name = f"Emilia_{'_'.join(langs)}_{tokenizer}"
-    save_dir = str(files("f5_tts").joinpath("../../")) + f"/data/{dataset_name}"
+    save_dir = str(files("f5_tts_thai").joinpath("../../")) + f"/data/{dataset_name}"
     print(f"\nPrepare for {dataset_name}, will save to {save_dir}\n")
 
     main()

@@ -14,8 +14,8 @@ import torch
 import torchaudio
 from huggingface_hub import hf_hub_download
 
-from f5_tts.model.backbones.dit import DiT
-from f5_tts.infer.utils_infer import (
+from f5_tts_thai.model.backbones.dit import DiT
+from f5_tts_thai.infer.utils_infer import (
     chunk_text,
     preprocess_ref_audio_text,
     load_vocoder,
@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--ref_audio",
-        default=str(files("f5_tts").joinpath("infer/examples/basic/basic_ref_en.wav")),
+        default=str(files("f5_tts_thai").joinpath("infer/examples/basic/basic_ref_en.wav")),
         help="Reference audio to provide model with speaker characteristics",
     )
     parser.add_argument(

@@ -27,9 +27,9 @@ from datasets.arrow_writer import ArrowWriter
 from safetensors.torch import save_file
 from scipy.io import wavfile
 from cached_path import cached_path
-from f5_tts.api import F5TTS
-from f5_tts.model.utils import convert_char_to_pinyin
-from f5_tts.infer.utils_infer import transcribe
+from f5_tts_thai.api import F5TTS
+from f5_tts_thai.model.utils import convert_char_to_pinyin
+from f5_tts_thai.infer.utils_infer import transcribe
 from importlib.resources import files
 
 
@@ -42,9 +42,9 @@ last_device = ""
 last_ema = None
 
 
-path_data = str(files("f5_tts").joinpath("../../data"))
-path_project_ckpts = str(files("f5_tts").joinpath("../../ckpts"))
-file_train = str(files("f5_tts").joinpath("train/finetune_cli.py"))
+path_data = str(files("f5_tts_thai").joinpath("../../data"))
+path_project_ckpts = str(files("f5_tts_thai").joinpath("../../ckpts"))
+file_train = str(files("f5_tts_thai").joinpath("train/finetune_cli.py"))
 
 device = (
     "cuda"
